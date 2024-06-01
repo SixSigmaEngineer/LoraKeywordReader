@@ -39,19 +39,18 @@ To install Lora Keyword Reader, you will need Python installed on your system. F
     ```
 
 ## 🎬 Usage
-To run the program, execute the following command in the project directory:
+To run the program, execute the batch file or the following command in the project directory:
 ```sh
-python app.py
+python lorareader.py
 
 ## Contributing
 Contributions to the Stable Diffusion Model Space Analyzer are welcome. Please ensure to update tests as appropriate.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 - SixSigmaEngineer for initial development.
 
 ## Images
-![Screenshot of my app](Example1.png)
-![Screenshot of my app](Example2.png)
+![Screenshot of my app](example1.png)
