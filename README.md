@@ -7,7 +7,7 @@
 ![Over-engineering](https://img.shields.io/badge/over--engineering-100%25-blue)
 ![Project's Fuel](https://img.shields.io/badge/project's%20fuel-pizza-important)
 
-![Screenshot of Lora Keyword Reader](LoraKeywordReaderLogo.png)
+![Screenshot of Lora Keyword Reader](photos/logo.png)
 
 ## 📜 Description
 **Lora Keyword Reader** is a Python-based tool designed to help users extract trigger words from `.safetensor` files using a simple web interface. Whether you're a machine learning enthusiast or just curious, this tool provides a user-friendly way to delve into your model files.
