@@ -42,7 +42,7 @@ To install Lora Keyword Reader, you will need Python installed on your system. F
 To run the program, execute the batch file or the following command in the project directory:
 ```sh
 python lorareader.py
-
+```
 ## Contributing
 Contributions to the Stable Diffusion Model Space Analyzer are welcome. Please ensure to update tests as appropriate.
 
