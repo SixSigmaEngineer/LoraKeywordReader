@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safetensor Reader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #drop_zone {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Safetensor Reader</h1>
+    <div id="drop_zone">Drag and drop a safetensor file here</div>
+    <p>or</p>
+    <input type="file" id="file_input">
+    <pre id="output"></pre>
+
+    <script>
+        const dropZone = document.getElementById('drop_zone');
+        const fileInput = document.getElementById('file_input');
+        const output = document.getElementById('output');
+
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropZone.style.borderColor = '#000';
+        });
+
+        dropZone.addEventListener('dragleave', (event) => {
+            dropZone.style.borderColor = '#ccc';
+        });
+
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropZone.style.borderColor = '#ccc';
+            handleFiles(event.dataTransfer.files);
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            handleFiles(event.target.files);
+        });
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                const formData = new FormData();
+                formData.append('file', file);
+
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        output.textContent = `Error: ${data.error}`;
+                    } else {
+                        output.textContent = JSON.stringify(data, null, 4);
+                    }
+                })
+                .catch(error => {
+                    output.textContent = `Error: ${error}`;
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
